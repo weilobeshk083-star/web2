@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LoveCat Rescue | Saving Street Cats, One Life at a Time</title>
+  <meta name="description" content="Non-profit cat rescue organization in Beijing. We rescue, rehabilitate, and rehome stray cats with love and care.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #ff6b6b;
+      --secondary: #4ecdc4;
+      --light: #f8f9fa;
+      --dark: #2c3e50;
+    }
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(to bottom, #fff8f0, #fff);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+    .navbar {
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/cat-hero.jpg') center/cover no-repeat;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    .carousel-item img {
+      height: 450px;
+      object-fit: cover;
+    }
+    .card {
+      transition: all 0.3s ease;
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .contact-icon {
+      font-size: 1.6rem;
+      color: var(--primary);
+    }
+    footer {
+      background: var(--dark);
+      color: #ddd;
+      padding: 3.5rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .btn-primary {
+      background: var(--primary);
+      border: none;
+      border-radius: 50px;
+      padding: 14px 32px;
+      font-weight: 600;
+    }
+    .btn-primary:hover {
+      background: #ff5252;
+      transform: translateY(-2px);
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2.px;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-danger d-flex align-they-center" href="#">
+        <i class="bi bi-heart-fill me-2"></i> LoveCat Rescue
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#mission">Our Mission</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Success Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1 class="display-3 fw-bold mb-4">Every Cat Deserves a Loving Home</h1>
+      <p class="lead mb-5 col-lg-8 mx-auto">We are a registered non-profit in Beijing dedicated to rescuing, rehabilitating, and rehoming stray cats with compassion and care.</p>
+      <div>
+        <a href="#contact" class="btn btn-primary btn-lg me-3">Adopt a Cat</a>
+        <a href="#contact" class="btn btn-outline-light btn-lg">Donate Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h2 class="section-title mb-4">About LoveCat Rescue</h2>
+          <p class="lead">Founded in 2020, <strong>LoveCat Rescue</strong> is a volunteer-run non-profit organization based in Beijing, China.</p>
+          <p>We follow the global <strong>TNR (Trap-Neuter-Return)</strong> standard to humanely control stray cat populations while providing medical care, sterilization, and adoption services.</p>
+          <p><strong>1,200+</strong> cats rescued | <strong>800+</strong> successfully adopted</p>
+          <ul class="list-unstyled mt-4">
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Officially registered non-profit</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> All cats are spayed/neutered, vaccinated & dewormed</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 100% transparent financial reports</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="images/about-team.jpg" class="img-fluid rounded shadow-lg" alt="Our rescue team" style="max-height: 420px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Mission -->
+  <section id="mission" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-title mb-5">Our Mission</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 text-center p-4">
+            <i class="bi bi-shield-fill text-primary mb-3" style="font-size: 3rem;"></i>
+            <h5 class="fw-bold">Rescue</h5>
+            <p>Respond to reports of injured, sick, or abandoned cats and provide immediate shelter and care.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 text-center p-4">
+            <i class="bi bi-heart-pulse-fill text-danger mb-3" style="font-size: 3rem;"></i>
+            <h5 class="fw-bold">Rehabilitate</h5>
+            <p>Partner with veterinarians to offer spay/neuter, vaccinations, and treatment for illnesses.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 text-center p-4">
+            <i class="bi bi-house-heart-fill text-success mb-3" style="font-size: 3rem;"></i>
+            <h5 class="fw-bold">Rehome</h5>
+            <p>Match healthy cats with loving, responsible forever families with lifelong follow-up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories (Image Carousel) -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="text-center section-title mb-5">Success Stories</h2>
+      <div id="catCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner rounded shadow">
+          <div class="carousel-item active">
+            <img src="images/cat1.jpg" class="d-block w-100" alt="Orange tabby before and after">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+              <h5>Little Orange: From Street to Sofa</h5>
+              <p>Found starving in a parking lot → now lives with a family in Shanghai</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/cat2.jpg" class="d-block w-100" alt="Calico cat rescue">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+              <h5>Tricolor Princess</h5>
+              <p>Abandoned pregnant → delivered 5 healthy kittens, all adopted</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/cat3.jpg" class="d-block w-100" alt="Cow cat kitten">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+              <h5>Cow Cat Baby</h5>
+              <p>Born under a car → rescued at 2 weeks old, now thriving</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-title mb-5">Get in Touch</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card p-5 shadow-lg

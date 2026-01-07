@@ -1,221 +1,691 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LoveCat Rescue | Saving Street Cats, One Life at a Time</title>
-  <meta name="description" content="Non-profit cat rescue organization in Beijing. We rescue, rehabilitate, and rehome stray cats with love and care.">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
-  <style>
-    :root {
-      --primary: #ff6b6b;
-      --secondary: #4ecdc4;
-      --light: #f8f9fa;
-      --dark: #2c3e50;
-    }
-    body {
-      font-family: 'Inter', 'Helvetica Neue', sans-serif;
-      background: linear-gradient(to bottom, #fff8f0, #fff);
-      color: var(--dark);
-      line-height: 1.7;
-    }
-    .navbar {
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    }
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/cat-hero.jpg') center/cover no-repeat;
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      text-align: center;
-    }
-    .carousel-item img {
-      height: 450px;
-      object-fit: cover;
-    }
-    .card {
-      transition: all 0.3s ease;
-      border: none;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-    .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
-    .contact-icon {
-      font-size: 1.6rem;
-      color: var(--primary);
-    }
-    footer {
-      background: var(--dark);
-      color: #ddd;
-      padding: 3.5rem 0 1.5rem;
-      font-size: 0.95rem;
-    }
-    .btn-primary {
-      background: var(--primary);
-      border: none;
-      border-radius: 50px;
-      padding: 14px 32px;
-      font-weight: 600;
-    }
-    .btn-primary:hover {
-      background: #ff5252;
-      transform: translateY(-2px);
-    }
-    .section-title {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 10px;
-    }
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 2.px;
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Bird Fund - NYC's Wildlife Rescue & Rehabilitation</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* 基础样式 */
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #004499;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 - 去掉logo后优化布局 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center; /* 导航居中显示 */
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .contact-donate-btn {
+            background-color: #e63946;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .contact-donate-btn:hover {
+            background-color: #d62828;
+        }
+
+        /* 英雄区 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1935&auto=format&fit=crop') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .hero-btn {
+            background-color: #e63946;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: #d62828;
+        }
+
+        /* 救助指南板块 */
+        .rescue-guide {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2b2d42;
+        }
+
+        .guide-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .guide-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2b2d42;
+        }
+
+        .guide-text p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #4a4e69;
+        }
+
+        .guide-text ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .guide-text li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #4a4e69;
+        }
+
+        .guide-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 救助案例板块 */
+        .patient-stories {
+            padding: 80px 0;
+            background-color: #f1faee;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .story-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .story-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .story-content {
+            padding: 20px;
+        }
+
+        .story-content h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2b2d42;
+        }
+
+        .story-content p {
+            color: #4a4e69;
+            margin-bottom: 15px;
+        }
+
+        /* 捐赠板块 */
+        .donate-section {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .donate-content h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #2b2d42;
+        }
+
+        .donate-content p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #4a4e69;
+        }
+
+        .contact-info-box {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-info-box h4 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #e63946;
+        }
+
+        .contact-info-box .contact-item {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #4a4e69;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* 关于我们板块 */
+        .about-us {
+            padding: 80px 0;
+            background-color: #e9ecef;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2b2d42;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #4a4e69;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2b2d42;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #f8f9fa;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #adb5bd;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-column p {
+            color: #adb5bd;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: #4a4e69;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #e63946;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #4a4e69;
+            color: #adb5bd;
+            font-size: 14px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .guide-content, .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 28px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            .contact-info-box {
+                padding: 25px;
+            }
+
+            .contact-info-box h4 {
+                font-size: 22px;
+            }
+
+            .contact-info-box .contact-item {
+                font-size: 16px;
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 70vh;
+            }
+
+            .hero-content h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-danger d-flex align-they-center" href="#">
-        <i class="bi bi-heart-fill me-2"></i> LoveCat Rescue
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#mission">Our Mission</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Success Stories</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <h1 class="display-3 fw-bold mb-4">Every Cat Deserves a Loving Home</h1>
-      <p class="lead mb-5 col-lg-8 mx-auto">We are a registered non-profit in Beijing dedicated to rescuing, rehabilitating, and rehoming stray cats with compassion and care.</p>
-      <div>
-        <a href="#contact" class="btn btn-primary btn-lg me-3">Adopt a Cat</a>
-        <a href="#contact" class="btn btn-outline-light btn-lg">Donate Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <h2 class="section-title mb-4">About LoveCat Rescue</h2>
-          <p class="lead">Founded in 2020, <strong>LoveCat Rescue</strong> is a volunteer-run non-profit organization based in Beijing, China.</p>
-          <p>We follow the global <strong>TNR (Trap-Neuter-Return)</strong> standard to humanely control stray cat populations while providing medical care, sterilization, and adoption services.</p>
-          <p><strong>1,200+</strong> cats rescued | <strong>800+</strong> successfully adopted</p>
-          <ul class="list-unstyled mt-4">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Officially registered non-profit</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> All cats are spayed/neutered, vaccinated & dewormed</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 100% transparent financial reports</li>
-          </ul>
+    <!-- 头部导航 - 移除logo -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#rescue-guide">Rescue Guide</a></li>
+                    <li><a href="#patients">Patient Stories</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><span class="contact-donate-btn" onclick="window.location.href='#donate'">Donate - Contact Us</span></li>
+                </ul>
+            </nav>
         </div>
-        <div class="col-lg-6 text-center">
-          <img src="images/about-team.jpg" class="img-fluid rounded shadow-lg" alt="Our rescue team" style="max-height: 420px; object-fit: cover;">
-        </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Our Mission -->
-  <section id="mission" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center section-title mb-5">Our Mission</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 text-center p-4">
-            <i class="bi bi-shield-fill text-primary mb-3" style="font-size: 3rem;"></i>
-            <h5 class="fw-bold">Rescue</h5>
-            <p>Respond to reports of injured, sick, or abandoned cats and provide immediate shelter and care.</p>
-          </div>
+    <!-- 英雄区 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Rescuing and Rehabilitating NYC's Wild Birds</h1>
+            <p>Wild Bird Fund is New York City's only wildlife rehabilitation center, dedicated to rescuing, rehabilitating, and releasing injured and orphaned wild birds and other small wildlife.</p>
+            <button class="hero-btn" onclick="window.location.href='#rescue-guide'">How to Help a Bird</button>
         </div>
-        <div class="col-md-4">
-          <div class="card h-100 text-center p-4">
-            <i class="bi bi-heart-pulse-fill text-danger mb-3" style="font-size: 3rem;"></i>
-            <h5 class="fw-bold">Rehabilitate</h5>
-            <p>Partner with veterinarians to offer spay/neuter, vaccinations, and treatment for illnesses.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 text-center p-4">
-            <i class="bi bi-house-heart-fill text-success mb-3" style="font-size: 3rem;"></i>
-            <h5 class="fw-bold">Rehome</h5>
-            <p>Match healthy cats with loving, responsible forever families with lifelong follow-up.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Success Stories (Image Carousel) -->
-  <section id="gallery" class="py-5">
-    <div class="container">
-      <h2 class="text-center section-title mb-5">Success Stories</h2>
-      <div id="catCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner rounded shadow">
-          <div class="carousel-item active">
-            <img src="images/cat1.jpg" class="d-block w-100" alt="Orange tabby before and after">
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
-              <h5>Little Orange: From Street to Sofa</h5>
-              <p>Found starving in a parking lot → now lives with a family in Shanghai</p>
+    <!-- 救助指南板块 -->
+    <section id="rescue-guide" class="rescue-guide">
+        <div class="container">
+            <h2 class="section-title">Found a Bird? Here's What to Do</h2>
+            <div class="guide-content">
+                <div class="guide-text">
+                    <h3>Step-by-Step Rescue Instructions</h3>
+                    <p>Finding an injured, sick, or orphaned bird can be distressing, but following these steps will help you provide the best possible care until professional help is available:</p>
+                    <ul>
+                        <li><strong>Assess the situation:</strong> Keep a safe distance and check if the bird is injured (bleeding, broken wing, unable to fly) or orphaned (without parents nearby).</li>
+                        <li><strong>Contain the bird:</strong> Gently place the bird in a ventilated cardboard box with a soft towel at the bottom. Keep it warm and quiet.</li>
+                        <li><strong>Do NOT feed or give water:</strong> Incorrect food or feeding methods can cause serious harm to wild birds.</li>
+                        <li><strong>Contact us immediately:</strong> Our team of wildlife rehabilitators will provide guidance on next steps.</li>
+                    </ul>
+                    <p><strong>Emergency Hotline:</strong> (646) 306-4340 (Available 24/7 for wildlife rescue inquiries)</p>
+                </div>
+                <div class="guide-img">
+                    <img src="https://cdn.firespring.com/images/d4e53f0a-e937-40ff-b39b-4bf857a9ee9f.jpg" alt="Wild Bird Rescue Guide">
+                </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/cat2.jpg" class="d-block w-100" alt="Calico cat rescue">
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
-              <h5>Tricolor Princess</h5>
-              <p>Abandoned pregnant → delivered 5 healthy kittens, all adopted</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="images/cat3.jpg" class="d-block w-100" alt="Cow cat kitten">
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
-              <h5>Cow Cat Baby</h5>
-              <p>Born under a car → rescued at 2 weeks old, now thriving</p>
-            </div>
-          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#catCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#catCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact & Location -->
-  <section id="contact" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center section-title mb-5">Get in Touch</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <div class="card p-5 shadow-lg
+    <!-- 救助案例板块 -->
+    <section id="patients" class="patient-stories">
+        <div class="container">
+            <h2 class="section-title">Meet Our Patients</h2>
+            <div class="stories-grid">
+                <!-- 案例1：土耳其秃鹫 -->
+                <div class="story-card">
+                    <div class="story-img">
+                        <img src="https://insider.si.edu/wp-content/uploads/2013/11/63709_orig.jpg" alt="Turkey Vulture Rescue">
+                    </div>
+                    <div class="story-content">
+                        <h4>Turkey Vulture (Sandy)</h4>
+                        <p>Rescued after Hurricane Sandy, this turkey vulture suffered from wing damage and dehydration. After months of rehabilitation, Sandy was successfully released back to the wild in NYC's Riverside Park.</p>
+                        <a href="#patients">Read Full Story →</a>
+                    </div>
+                </div>
+                <!-- 案例2：东方角鸮 -->
+                <div class="story-card">
+                    <div class="story-img">
+                        <img src="https://www.reconnectwithnature.org/getmedia/55b38a85-98f5-4957-91a1-51dcbd0b117c/Eastern-screech-owl-1-Shutterstock.jpg?width=1500&height=1000&ext=.jpg" alt="Eastern Screech Owl">
+                    </div>
+                    <div class="story-content">
+                        <h4>Eastern Screech Owl (Ollie)</h4>
+                        <p>Ollie was found on the ground in Brooklyn after being attacked by a neighborhood cat. He had minor injuries but was suffering from shock. After a month of care, he was released to a wooded area in Prospect Park.</p>
+                        <a href="#patients">Read Full Story →</a>
+                    </div>
+                </div>
+                <!-- 案例3：棕硬尾鸭 -->
+                <div class="story-card">
+                    <div class="story-img">
+                        <img src="https://www.aquariumofpacific.org/images/olc/ruddy_duck_usgs600.jpg" alt="Ruddy Duck">
+                    </div>
+                    <div class="story-content">
+                        <h4>Ruddy Duck (Bella)</h4>
+                        <p>Bella was attacked by a dog while swimming in Central Park's lake. She had severe lacerations but survived thanks to quick intervention by park visitors and our rehabilitation team. Bella was released after 6 weeks of care.</p>
+                        <a href="#patients">Read Full Story →</a>
+                    </div>
+                </div>
+                <!-- 案例4：红尾鵟 -->
+                <div class="story-card">
+                    <div class="story-img">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5a6390338a02c77bf05da4ab/1566232539653-BQICI6HYFLYAPRNOKU1C/39165006195_6de25e2f59_o.jpg" alt="Red-tailed Hawk">
+                    </div>
+                    <div class="story-content">
+                        <h4>Red-tailed Hawk (Rusty)</h4>
+                        <p>Rusty was found in Manhattan with a fractured talon, likely from colliding with a building. Our veterinary team repaired the injury, and after rehabilitation, Rusty was released to the rooftop of a NYC building where he continues to thrive.</p>
+                        <a href="#patients">Read Full Story →</a>
+                    </div>
+                </div>
+                <!-- 案例5：游隼 -->
+                <div class="story-card">
+                    <div class="story-img">
+                        <img src="https://www.allaboutbirds.org/guide/assets/photo/303616431-480px.jpg" alt="Peregrine Falcon">
+                    </div>
+                    <div class="story-content">
+                        <h4>Peregrine Falcon (Falcon)</h4>
+                        <p>As the fastest bird in the world, this peregrine falcon was found exhausted after a collision with a skyscraper. Our team provided rest, nutrition, and physical therapy, and he was released back to his urban nesting site.</p>
+                        <a href="#patients">Read Full Story →</a>
+                    </div>
+                </div>
+                <!-- 案例6：旅鸫 -->
+                <div class="story-card">
+                    <div class="story-img">
+                        <img src="https://www.perkypet.com/media/Articles/Perky-Pet/American-Robin-Top-10-Interesting-Facts.jpg" alt="American Robin">
+                    </div>
+                    <div class="story-content">
+                        <h4>American Robin (Luna)</h4>
+                        <p>Luna was found by a hiker in the Upper East Side, unable to fly due to a wing sprain. After 3 weeks of rehabilitation and flight training, she was released to the wild, where she was spotted reuniting with her flock.</p>
+                        <a href="#patients">Read Full Story →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 捐赠板块 -->
+    <section id="donate" class="donate-section">
+        <div class="container">
+            <h2 class="section-title">Support Our Work</h2>
+            <div class="donate-content">
+                <h3>Your Donation Saves Lives</h3>
+                <p>Wild Bird Fund relies entirely on donations from people like you to fund our rescue, rehabilitation, and release efforts. Every dollar helps us provide medical care, food, and shelter to NYC's injured wild birds.</p>
+                
+                <div class="contact-info-box">
+                    <h4>For Donation Inquiries, Please Contact Us</h4>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <span>Emergency & Donation Hotline: (646) 306-4340</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>Email: info@wildbirdfund.local</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Visit Us: 565 Columbus Ave, New York, NY 10024</span>
+                    </div>
+                    <p style="margin-top:25px; color:#2b2d42;">Our team will provide you with all the donation methods and details you need</p>
+                </div>
+                
+                <p style="margin-top:30px;"><strong>Tax Information:</strong> Wild Bird Fund is a 501(c)(3) nonprofit organization (Tax ID: 12-3456789). All donations are tax-deductible to the extent allowed by law.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们板块 -->
+    <section id="about" class="about-us">
+        <div class="container">
+            <h2 class="section-title">About Wild Bird Fund</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://www.nhmagazine.com/content/uploads/data-import/319cdf5f/on20the20wing202.jpg" alt="Wild Bird Fund Rehabilitation Center">
+                </div>
+                <div class="about-text">
+                    <h3>Our Mission & History</h3>
+                    <p>Founded in 2005, Wild Bird Fund is New York City's only nonprofit wildlife rehabilitation center dedicated to rescuing and rehabilitating injured, sick, and orphaned wild birds and other small wildlife.</p>
+                    <p>Each year, we care for over 3,000 animals, including pigeons, hawks, owls, ducks, seagulls, and even small mammals like squirrels and opossums. Our team of trained rehabilitators, veterinarians, and volunteers work tirelessly to give these animals a second chance at life in the wild.</p>
+                    <p>We also provide educational programs to teach New Yorkers about wildlife conservation and how to coexist with the wild animals that share our urban environment.</p>
+                    <p><strong>Our Values:</strong> Compassion, Education, Conservation, and Community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#rescue-guide">Rescue Guide</a></li>
+                        <li><a href="#patients">Patient Stories</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <p>Address: 565 Columbus Ave, New York, NY 10024</p>
+                    <p>Emergency Hotline: (646) 306-4340</p>
+                    <p>Email: info@wildbirdfund.local (Localized)</p>
+                    <p>Hours: 9 AM - 7 PM Daily (Rescue Services 24/7)</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="#volunteer">Volunteer</a></li>
+                        <li><a href="#internships">Internships</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#education">Education Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to our newsletter for updates on our rescues, events, and how you can help.</p>
+                    <form action="#subscribe" method="POST">
+                        <input type="email" placeholder="Your Email Address" style="padding: 10px; width: 100%; border-radius: 5px; border: none; margin-bottom: 10px;">
+                        <button type="submit" style="background-color: #e63946; color: white; padding: 10px; border: none; border-radius: 5px; width: 100%; cursor: pointer;">Subscribe</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="#facebook">F</a>
+                        <a href="#instagram">I</a>
+                        <a href="#twitter">T</a>
+                        <a href="#youtube">Y</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Wild Bird Fund - All Rights Reserved | NYC Wildlife Rehabilitation</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 交互脚本 -->
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 按钮交互
+        const donateButtons = document.querySelectorAll('.contact-donate-btn, .hero-btn');
+        donateButtons.forEach(btn => {
+            btn.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            btn.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // 图片加载失败备用方案（鸟类相关）
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.src = 'https://insider.si.edu/wp-content/uploads/2013/11/63709_orig.jpg'; // 秃鹫作为备用鸟类图
+            });
+        });
+    </script>
+</body>
+</html>
